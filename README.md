@@ -48,8 +48,7 @@ A modern, responsive LogiQids board application built with Next.js, featuring dr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/nextjs-kanban-board.git
-   cd frontend
+   git clone https://github.com/Abhi3110200/LogiQids
    ```
 
 2. **Install dependencies**
