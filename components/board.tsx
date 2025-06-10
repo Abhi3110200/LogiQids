@@ -4,20 +4,19 @@ import {
   DndContext,
   type DragEndEvent,
   type DragOverEvent,
-  type DragStartEvent,
   PointerSensor,
   useSensor,
   useSensors,
 } from "@dnd-kit/core"
 import { SortableContext, horizontalListSortingStrategy } from "@dnd-kit/sortable"
-import { useState } from "react"
 import { useBoard } from "@/context/board-context"
 import { KanbanList } from "@/components/kanban-list"
 import { AddList } from "@/components/add-list"
 
 export function Board() {
   const { board, moveCard, moveList } = useBoard()
-  const [activeId, setActiveId] = useState<string | null>(null)
+//   const [activeId, setActiveId] = useState<string | null>(null)
+
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -27,8 +26,9 @@ export function Board() {
     }),
   )
 
-  const handleDragStart = (event: DragStartEvent) => {
-    setActiveId(event.active.id as string)
+  const handleDragStart = () => {
+    // Currently not using drag start event for any functionality
+    // If needed later for drag overlays or visual feedback, we can add the event parameter back
   }
 
   const handleDragOver = (event: DragOverEvent) => {
@@ -68,7 +68,6 @@ export function Board() {
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event
-    setActiveId(null)
 
     if (!over) return
 

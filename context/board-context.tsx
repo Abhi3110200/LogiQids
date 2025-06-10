@@ -165,8 +165,43 @@ export function BoardProvider({ children }: { children: ReactNode }) {
   }
 
   const resetBoard = () => {
-    setBoard([])
+    // Keep the lists but clear all cards
+    setBoard((prev) => {
+      if (prev.length === 0) {
+        // If there are no lists, create default ones
+        return [
+          {
+            id: "list-1",
+            title: "To Do",
+            cards: [],
+          },
+          {
+            id: "list-2",
+            title: "In Progress",
+            cards: [],
+          },
+          {
+            id: "list-3",
+            title: "Done",
+            cards: [],
+          },
+        ]
+      }
+
+      // Keep existing lists but clear all cards
+      return prev.map((list) => ({
+        ...list,
+        cards: [],
+      }))
+    })
+
+    // Clear storage to ensure clean state
     clearStorage()
+
+    // Save the empty lists to storage
+    setTimeout(() => {
+      saveToStorage(board)
+    }, 100)
   }
 
   const toggleCardCompleted = (listId: string, cardId: string) => {
