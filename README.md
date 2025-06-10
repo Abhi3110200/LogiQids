@@ -95,7 +95,7 @@ A modern, responsive LogiQids board application built with Next.js, featuring dr
 ## 📁 Project Structure
 
 ```
-nextjs-kanban-board/
+new-folder/
 ├── app/
 │   ├── globals.css          # Global styles and Tailwind config
 │   ├── layout.tsx           # Root layout component
