@@ -2,6 +2,9 @@
 
 A modern, responsive LogiQids board application built with Next.js, featuring drag-and-drop functionality, task management, and a beautiful Trello-inspired interface.
 
+## Deployed Link 
+- https://logi-qids-abhi3110200s-projects.vercel.app/
+
 ![LogiQids Board Preview](https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=Kanban+Board+Preview)
 
 ## ✨ Features
